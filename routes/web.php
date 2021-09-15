@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('two-step-verification', function(Request $request) {
+
+    $username = $request->query('username');
+    $mobile = $request->query('mobile');
+
+    if ($username == 'user' && $mobile == '017700') {
+        $code = uniqid();
+        Log::channel('message')->info('Your two step verfication code is : ' . $code);
+    } else {
+        return 'Username or mobile are wrong!';
+    }
+
+    return 'Check your message for verification!';
 });
