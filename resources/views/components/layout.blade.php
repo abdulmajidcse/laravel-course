@@ -12,7 +12,7 @@
 
     <title> {{ $title }} </title>
 
-    <link rel="stylesheet" href="{{ asset('files/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 </head>
 
