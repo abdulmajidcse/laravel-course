@@ -1,3 +1,3 @@
-<footer class="text-center bg-dark text-light p-4">
-    <p>Laravel Course</p>
+<footer class="text-center bg-secondary text-light p-2">
+    <p class="mt-3">2021 &copy; Classic Blog</p>
 </footer>
