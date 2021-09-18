@@ -10,23 +10,21 @@
 
     <title> {{ $title }} </title>
 
+    <link rel="stylesheet" href="{{ asset('files/style.css') }}">
+
   </head>
   <body>
 
     <div class="container mt-2">
 
-        <header>
-            Header Menu
-        </header>
+        <x-header />
      
         <main>
             {{ $slot }}
         </main>
      
 
-        <footer>
-            Footer menu
-        </footer>
+        <x-footer />
     </div>
     
 
