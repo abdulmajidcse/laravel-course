@@ -15,7 +15,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('about') }}">About</a>
                     </li>
-                    <li class="nav-item dropdown">
+
+                    {{-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="authProfileDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Administrator
@@ -28,7 +29,7 @@
                             </li>
                             <li><a class="dropdown-item" href="#">Logout</a></li>
                         </ul>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
         </div>

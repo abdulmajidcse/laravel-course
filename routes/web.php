@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FileSystemTestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,6 @@ Route::get('/', function () {
 Route::get('about', function() {
     return view('about');
 });
+
+Route::get('file', [FileSystemTestController::class, 'createFile']);
+Route::post('file/store', [FileSystemTestController::class, 'storeFile']);
