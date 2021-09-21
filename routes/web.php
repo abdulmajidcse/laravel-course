@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FileSystemTestController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,5 @@ Route::get('about', function() {
 
 Route::get('file', [FileSystemTestController::class, 'createFile']);
 Route::post('file/store', [FileSystemTestController::class, 'storeFile']);
+
+Route::get('categories', [CategoryController::class, 'index']);
