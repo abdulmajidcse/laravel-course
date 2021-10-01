@@ -10,16 +10,57 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        // $categories = Category::all();
+        $categories = Category::all();
 
-        // foreach($categories as $category) {
-        //     echo $category->name . '<br/>';
-        // }
+        return view('category.index', ['categories' => $categories]);
+    }
 
-        Category::create([
-            'name' => 'Lumen'
+    public function create()
+    {
+        return view('category.create');
+    }
+
+    public function store(Request $request)
+    {
+        $data = $request->validate([
+            'name' => 'required|string',
         ]);
 
-        return 'success';
+        Category::create($data);
+
+        return redirect()->back()->with('success', 'Successfully Category saved!');
+    }
+
+    public function show(Category $category)
+    {
+        return $category;
+    }
+
+    public function edit(Category $category)
+    {
+        // $category = Category::where('id', $id)->firstOrFail();
+
+        return view('category.edit', ['category' => $category]);
+    }
+
+    public function update(Request $request, Category $category)
+    {
+        $data = $request->validate([
+            'name' => 'required|string',
+        ]);
+
+        $category->update([
+            'name' => $data['name'],
+        ]);
+
+        return redirect()->back()->with('success', 'Successfully Category updated!');
+    }
+
+    public function destroy(Category $category)
+    {
+        // $category = Category::where('id', $id)->firstOrFail();
+        $category->delete();
+
+        return redirect()->back()->with('success', 'Successfully Category deleted!');
     }
 }
