@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FileSystemTestController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,3 +36,5 @@ Route::post('file/store', [FileSystemTestController::class, 'storeFile']);
 
 
 Route::resource('categories', CategoryController::class)->except('show');
+
+Route::resource('posts', PostController::class);
